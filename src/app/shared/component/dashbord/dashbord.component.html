@@ -1,0 +1,81 @@
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col googleImg text-center">               
+                    <span>
+                        <a href="">
+                            <img src="https://images.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="" class="img-fluid img-logo">
+                        </a>
+                    </span>
+                    <span class="logoinfo">
+                        Graviyard
+                    </span>
+                
+            </div>
+        </div>
+    </div>
+</header>
+<section class="searchInfo p-5 mb-3">
+    <div class="container">
+        <h2 class="mb-3">
+            Products Killed by <a href="javascript:;">
+                <img src="https://images.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="" class="img-fluid img-logo"> 
+            </a> !
+        </h2>
+
+        <div class="row mt-4">
+            <div class="col-md-4 offset-md-2">
+                <input type="text" placeholder="search by name" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <select name="app" id="" class="form-control">
+                    <option value="all">all</option>
+                    <option value="hardware">hardware</option>
+                    <option value="service">service</option>
+                    <option value="app">app</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-card p-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 mb-3" *ngFor="let card of  googleCardArr">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="btn-right mb-2 text-right">
+                            <button class="btn btn-outline" [ngClass]="{'bg-info' : card.type === 'hardware', 'bg-success' : card.type === 'app',
+                        'bg-warning' : card.type === 'service' }">
+                                {{card.type}}
+                              </button>
+                        </div>
+
+                        <h6>
+                            {{card.name}}
+                            
+                        </h6>
+                        
+                        <p>
+                            From {{card.dateOpen}}  to {{card. dateClose}}
+                        </p>
+
+                        <div class="cardDesc">
+                            <p >
+                                {{card.description}}
+                            </p>
+    
+                        </div>
+                     
+                        <div class="btnDetails">
+                            <button class="btn btn-primary" [routerLink]="['link', card.name]">
+                                Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

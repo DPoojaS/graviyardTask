@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DashbordComponent } from './shared/component/dashbord/dashbord.component';
+import { GooglecardComponent } from './shared/component/googlecard/googlecard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashbordComponent,
+    GooglecardComponent
   ],
   imports: [
     BrowserModule,
